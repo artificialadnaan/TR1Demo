@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  background: #fafafa;
+  color: #0a0a0a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grid paper background pattern */
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(10,10,10,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(10,10,10,0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-grid-dark {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Noise texture overlay */
+.noise {
+  position: relative;
+}
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Numeric tabular figures for data */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3;
+}
